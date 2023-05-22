@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javasystemapp.MainPageController">
+    <children>
+        <ToolBar prefHeight="79.0" prefWidth="691.0" style="-fx-background-color: BLACK;">
+            <items>
+                <Label prefHeight="49.0" prefWidth="480.0" text="               Bank of MABSL" textFill="#f6f6f6">
+                    <font>
+                        <Font name="Stencil" size="38.0" />
+                    </font>
+                </Label>
+            </items>
+        </ToolBar>
+        <ImageView fitHeight="541.0" fitWidth="691.0" layoutX="1.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../assets/1.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="541.0" fitWidth="691.0" layoutX="-1.0" layoutY="80.0">
+            <image>
+                <Image url="@../../../assets/1.jpg" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="emp_ic" layoutX="361.0" layoutY="269.0" prefHeight="310.0" prefWidth="315.0" style="-fx-background-color: #00003d;">
+            <children>
+                <ToolBar layoutY="-2.0" prefHeight="48.0" prefWidth="315.0" style="-fx-background-color: black;">
+                    <items>
+                        <Label text="    Select your Role" textFill="WHITE">
+                            <font>
+                                <Font name="Tahoma" size="29.0" />
+                            </font>
+                        </Label>
+                    </items>
+                </ToolBar>
+
+                <Button fx:id="cus_btn" layoutX="32.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleCusBtn" prefHeight="17.0" prefWidth="253.0" style="-fx-background-color: #76ff03;" styleClass="cus_btn" stylesheets="@../../../Stylesheet/Style.css" text="Customer" textFill="WHITE">
+                    <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="emp_btn" layoutX="32.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleEmpBtn" prefHeight="17.0" prefWidth="253.0" style="-fx-background-color: #76ff03;" styleClass="emp_btn" stylesheets="@../../../Stylesheet/Style.css" text="Employee" textFill="WHITE">
+                    <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="admin_btn" layoutX="31.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleAdminBtn" prefHeight="17.0" prefWidth="253.0" style="-fx-background-color: #76ff03;" styleClass="admin_btn" stylesheets="@../../../Stylesheet/Style.css" text="Administrator" textFill="WHITE">
+                    <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="38.0" layoutY="94.0" text="Welcome to MABSL Bank!" textFill="#e60f0f">
+            <font>
+                <Font name="Webdings" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="128.0" prefHeight="19.0" prefWidth="331.0" text="At MABSL (Make All Banking Simple and Lucrative) Bank " textFill="#ffbebe">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="cus_ic" fitHeight="48.0" fitWidth="57.0" layoutX="332.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../assets/customer.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="332.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../assets/emp.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="191.0" layoutX="416.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../assets/logo.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="177.0" layoutY="589.0" prefHeight="31.0" prefWidth="322.0" text="&quot;Banking Made Simple, Lucrative, and Personalized!&quot;" textFill="WHITE">
+            <font>
+                <Font name="Impact" size="15.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="48.0" fitWidth="59.0" layoutX="327.0" layoutY="335.0">
+            <image>
+                <Image url="@../../../assets/admin_ic.png" />
+            </image>
+        </ImageView>
+        <Accordion />
+    </children>
+</AnchorPane>

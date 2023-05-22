@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javasystemapp.AdminDashboardController">
+   <children>
+      <ToolBar prefHeight="100.0" prefWidth="805.0" style="-fx-background-color: #000000;">
+         <items>
+            <Label prefHeight="51.0" prefWidth="412.0" text=" Bank of MABSL" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="34.0" />
+               </font>
+            </Label>
+         </items>
+      </ToolBar>
+      <ImageView fitHeight="602.0" fitWidth="805.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/7.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="100.0" prefHeight="602.0" prefWidth="805.0">
+         <children>
+            <HBox layoutY="529.0" prefHeight="72.0" prefWidth="805.0" style="-fx-background-color: black;" />
+            <Label layoutX="359.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 1.7em; -fx-font-weight: bolder;" text="Welcome" />
+            <Label fx:id="adminName" layoutX="478.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 1.7em; -fx-font-weight: bolder;" />
+            <Hyperlink fx:id="logoutbtn" layoutX="705.0" layoutY="30.0" onAction="#logout" style="-fx-text-fill: blue; -fx-font-size: 1.2em;" text="Logout" />
+            <ListView layoutX="219.0" layoutY="65.0" prefHeight="537.0" prefWidth="586.0" />
+            <VBox layoutX="-2.0" layoutY="65.0" prefHeight="537.0" prefWidth="223.0">
+               <children>
+                  <AnchorPane prefHeight="537.0" prefWidth="180.0">
+                     <children>
+                        <Button fx:id="addbtn" layoutX="10.0" layoutY="19.0" mnemonicParsing="false" onAction="#Addemployee" prefHeight="61.0" prefWidth="203.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 1.3em; -fx-font-weight: bold;" text="Add Employee">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="deletebtn" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onAction="#DeleteEmployee" prefHeight="61.0" prefWidth="203.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 1.3em; -fx-font-weight: bold;" text="Delete Employee">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button fx:id="updatebtn" layoutX="10.0" layoutY="109.0" mnemonicParsing="false" onAction="#ubdateemployee" prefHeight="61.0" prefWidth="203.0" style="-fx-background-color: Blue; -fx-text-fill: white; -fx-font-size: 1.3em; -fx-font-weight: bold;" text="Update Employee">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Label fx:id="adminName" layoutX="478.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 1.7em; -fx-font-weight: bolder;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

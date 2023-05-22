@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javasystemapp.EmployeeDashboard">
+<children>
+    <ToolBar prefHeight="100.0" prefWidth="805.0" style="-fx-background-color: #000000;">
+        <items>
+            <Label prefHeight="51.0" prefWidth="412.0" text="          Bank of MABSL" textFill="WHITE">
+                <font>
+                    <Font name="Arial Black" size="34.0" />
+                </font>
+            </Label>
+        </items>
+    </ToolBar>
+      <AnchorPane prefHeight="100.0" prefWidth="805.0">
+         <children>
+            <Hyperlink layoutX="695.0" layoutY="57.0" style="-fx-text-fill: red; -fx-font-size: 1.3em;" text="Logout" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="293.0" layoutY="340.0" text="This is employees dashboard" />
+
+</children>
+</AnchorPane>

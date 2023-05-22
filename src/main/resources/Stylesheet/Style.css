@@ -1,0 +1,63 @@
+.admin_btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #70f303;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3rem;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-transition: -fx-border-color 0.2s;
+}
+
+.admin_btn:hover {
+    -fx-border-color: #FFD700;
+    -fx-text-fill: white;
+}
+
+.cus_btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #70f303;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3rem;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-transition: -fx-border-color 0.2s;
+}
+
+.cus_btn:hover {
+    -fx-border-color: #FFD700;
+    -fx-text-fill: white;
+}
+
+.emp_btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #70f303;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3rem;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-transition: -fx-border-color 0.2s;
+}
+
+.emp_btn:hover {
+    -fx-border-color: #FFD700;
+    -fx-text-fill: white;
+}
+
+.crt_btn:hover {
+    -fx-border-color: #FFD700;
+    -fx-text-fill: white;
+}
+
+.clr_btn:hover {
+    -fx-border-color: #FFD700;
+    -fx-text-fill: white;
+}

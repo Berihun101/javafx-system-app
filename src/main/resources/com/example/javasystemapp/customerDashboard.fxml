@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="706.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javasystemapp.CustomerDashboardController">
+    <children>
+        <ToolBar prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #000000;">
+            <items>
+                <Label prefHeight="51.0" prefWidth="412.0" text="       Bank of MABSL" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Black" size="34.0" />
+                    </font>
+                </Label>
+            </items>
+        </ToolBar>
+      <AnchorPane layoutY="100.0" prefHeight="605.0" prefWidth="800.0" style="-fx-background-color: #2C3333;">
+         <children>
+            <Label layoutX="278.0" layoutY="23.0" style="-fx-text-fill: #1B9C85; -fx-font-size: 1.7em; -fx-font-weight: bold;" text="welcome" />
+            <Label fx:id="customerName" layoutX="400.0" layoutY="23.0" prefHeight="38.0" prefWidth="107.0" style="-fx-text-fill: #1B9C85; -fx-font-size: 1.7em; -fx-font-weight: bold;" />
+            <Hyperlink fx:id="logoutbtn" layoutX="686.0" layoutY="24.0" onAction="#logout" style="-fx-text-fill: red; -fx-font-size: 1.3em; -fx-font-weight: bold;" text="Logout" />
+            <ImageView fitHeight="554.0" fitWidth="800.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/4.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="258.0" layoutY="80.0" style="-fx-text-fill: #F9D949; -fx-font-size: 1.7em; -fx-font-weight: bold;" text="Our customers are our assets" />
+            <Label layoutX="22.0" layoutY="525.0" style="-fx-text-fill: #1B9C85; -fx-font-size: 1.7em; -fx-font-weight: bold;" text="Contact us" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="100.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="85.0" layoutX="712.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/person.png" />
+               </image>
+            </ImageView>
+            <MenuButton ellipsisString="Update profile" layoutX="626.0" layoutY="35.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: transparent;" textFill="WHITE">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Update Profile" />
+                <MenuItem mnemonicParsing="false" text="View Profile" />
+              </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuButton>
+             
+         </children>
+      </AnchorPane>
+
+
+    </children>
+
+</AnchorPane>
