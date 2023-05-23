@@ -1,8 +1,12 @@
+package com.example.javasystemapp;
+
 import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
+
+import com.example.javasystemapp.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
@@ -42,7 +46,7 @@ public class CustomerLoginPageController implements Initializable {
 
     @FXML
     public void goToCreate() throws IOException {
-        Main.sceneFactory("CreateAccount");
+        Main.sceneFactory("Customer-acc");
     }
 
     @FXML
@@ -52,14 +56,14 @@ public class CustomerLoginPageController implements Initializable {
         boolean isValid = searchUser(customerUsername, password);
         Log.CustomerLoginAttempt(customerUsername, isValid);
         if (searchUser(customerUsername, password)) {
-            System.out.println("Logged in");
+            Main.sceneFactory("customerDashboard");
         }
         else 
             lblErrorMessage.setText("Incorrect Username or Password!");
     }
     @FXML
     public void goBackToHome() throws IOException {
-        Main.sceneFactory("hello-view");
+        Main.sceneFactory("MainPage");
     }
     
     public boolean searchUser(String userKey, String passKey) throws SQLException, ClassNotFoundException {

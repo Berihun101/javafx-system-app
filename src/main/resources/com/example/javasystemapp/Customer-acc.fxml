@@ -40,28 +40,20 @@
                 <Font name="Tahoma Bold" size="25.0" />
             </font>
         </Label>
-        <Button fx:id="crt_btn" layoutX="364.0" layoutY="358.0" mnemonicParsing="false" onAction="#addUser" prefHeight="49.0" prefWidth="121.0" style="-fx-background-color: #76ff03;" styleClass="crt_btn" stylesheets="@../../../Stylesheet/Style.css" text="Create Account" textFill="WHITE">
+        <Button fx:id="crt_btn" layoutX="353.0" layoutY="359.0" mnemonicParsing="false" onAction="#addUser" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #76ff03;" styleClass="crt_btn" stylesheets="@../../../Stylesheet/Style.css" text="Create Account" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="clr_btn" layoutX="503.0" layoutY="358.0" mnemonicParsing="false" onAction="#clear" prefHeight="49.0" prefWidth="121.0" style="-fx-background-color: red;" styleClass="clr_btn" stylesheets="@../../../Stylesheet/Style.css" text="Clear" textFill="WHITE">
+        <Button fx:id="clr_btn" layoutX="503.0" layoutY="359.0" mnemonicParsing="false" onAction="#clear" prefHeight="38.0" prefWidth="121.0" style="-fx-background-color: red;" styleClass="clr_btn" stylesheets="@../../../Stylesheet/Style.css" text="Clear" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label layoutX="398.0" layoutY="430.0" prefHeight="25.0" prefWidth="210.0" text="Already have an account?" textFill="#f2f2f2">
+        <Label layoutX="410.0" layoutY="411.0" prefHeight="25.0" prefWidth="210.0" text="Already have an account?" textFill="#f2f2f2">
             <font>
                 <Font size="13.0" />
             </font>
-        </Label>
-        <Label layoutX="501.0" layoutY="455.0" prefHeight="25.0" prefWidth="161.0" text="   Go to Login page" textFill="#338ec6">
-            <font>
-                <Font size="14.0" />
-            </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
         </Label>
         <ImageView fx:id="un_ic" fitHeight="49.0" fitWidth="51.0" layoutX="331.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -86,6 +78,10 @@
         <AnchorPane prefHeight="200.0" prefWidth="200.0" />
         <Label fx:id="lblSuccessMessage" layoutX="342.0" layoutY="413.0" prefHeight="17.0" prefWidth="291.0" />
         <Label fx:id="lblErrorMessage" layoutX="356.0" layoutY="413.0" prefHeight="17.0" prefWidth="279.0" />
-        <Button fx:id="back" layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleBckBtn" style="-fx-shape: &quot;M 86.6 0 L 0 43.3 L 86.6 86.6 L 86.6 0&quot;; -fx-background-color: red;" text="     " />
+        <Button fx:id="back" layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleBckBtn" style="-fx-shape: &quot;M 86.6 0 L 0 43.3 L 86.6 86.6 L 86.6 0&quot;; -fx-background-color: red;" text="     ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Hyperlink fx:id="backlink" layoutX="449.0" layoutY="434.0" onAction="#handleBckBtn" text="Go Back to Login" />
     </children>
 </AnchorPane>

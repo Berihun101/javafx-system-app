@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -11,42 +17,42 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" stylesheets="styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerLoginPageController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" stylesheets="@../../../Stylesheet/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javasystemapp.CustomerLoginPageController">
     
     <children>
-        <ImageView fitHeight="400.0" fitWidth="651.0" layoutX="-38.0" styleClass="image-view">
+        <ImageView fitHeight="400.0" fitWidth="669.0" layoutX="-38.0" styleClass="image-view">
             <image>
-                <Image url="@4.jpg" />
+                <Image url="@../../../assets/4.jpg" />
             </image>
         </ImageView>
-        <TextField fx:id="tfUsername" layoutX="435.0" layoutY="151.0" styleClass="tfUsername" stylesheets="@styles.css" />
-        <PasswordField fx:id="tfPassword" layoutX="435.0" layoutY="219.0" styleClass="password-field" stylesheets="@styles.css" />
-        <Label layoutX="355.0" layoutY="151.0" styleClass="label" stylesheets="@styles.css" text="Username" textFill="WHITE">
+        <TextField fx:id="tfUsername" layoutX="435.0" layoutY="151.0" styleClass="tfUsername" stylesheets="@../../../Stylesheet/Style.css" />
+        <PasswordField fx:id="tfPassword" layoutX="435.0" layoutY="219.0" styleClass="password-field" stylesheets="@../../../Stylesheet/Style.css" />
+        <Label layoutX="355.0" layoutY="151.0" styleClass="label" stylesheets="@../../../Stylesheet/Style.css" text="Username" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="357.0" layoutY="221.0" styleClass="label" stylesheets="@styles.css" text="Password" textFill="WHITE">
+        <Label layoutX="357.0" layoutY="221.0" styleClass="label" stylesheets="@../../../Stylesheet/Style.css" text="Password" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button id="btnLogin" fx:id="btnLogin" layoutX="412.0" layoutY="288.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="59.0" styleClass="button login-button" stylesheets="@styles.css" text="Login" />
-        <Button id="btnClear" fx:id="btnClear" layoutX="517.0" layoutY="288.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="63.0" styleClass="button clear-button" stylesheets="@styles.css" text="Clear" textFill="WHITE" />
-        <Hyperlink fx:id="goToCreate" layoutX="494.0" layoutY="363.0" onAction="#goToCreate" styleClass="hyperlink" text="Create Account" />
+        <Button id="btnLogin" fx:id="btnLogin" layoutX="438.0" layoutY="273.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: green;" styleClass="button login-button" stylesheets="@../../../Stylesheet/Style.css" text="Login" />
+        <Button id="btnClear" fx:id="btnClear" layoutX="541.0" layoutY="273.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: red;" styleClass="button clear-button" stylesheets="@../../../Stylesheet/Style.css" text="Clear" textFill="WHITE" />
+        <Hyperlink fx:id="goToCreate" layoutX="480.0" layoutY="348.0" onAction="#goToCreate" styleClass="hyperlink" text="Create Account" />
         <Label fx:id="lblErrorMessage" layoutX="306.0" layoutY="327.0" prefHeight="17.0" prefWidth="278.0" styleClass="error-message" textFill="#d41f1f" />
         <Text fill="WHITE" layoutX="466.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Login Page">
             <font>
                 <Font name="Tahoma Bold" size="22.0" />
             </font>
         </Text>
-        <TextField fx:id="tfPassword1" layoutX="435.0" layoutY="219.0" styleClass="text-field" stylesheets="@styles.css" />
-        <ImageView fx:id="eyeIcon" fitHeight="27.0" fitWidth="16.0" layoutX="564.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view">
+        <TextField fx:id="tfPassword1" layoutX="435.0" layoutY="219.0" styleClass="text-field" stylesheets="@../../../Stylesheet/Style.css" />
+        <ImageView fx:id="eyeIcon" fitHeight="27.0" fitWidth="16.0" layoutX="601.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view">
             <image>
-                <Image url="@eye_icon.png" />
+                <Image url="@../../../assets/eye_icon.png" />
             </image>
         </ImageView>
-        <Label layoutX="366.0" layoutY="365.0" styleClass="label" text="Don't have an account?" textFill="WHITE" />
+        <Label layoutX="451.0" layoutY="327.0" styleClass="label" text="Don't have an account?" textFill="WHITE" />
       <Text fill="#ffdb49" layoutX="377.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="MABSL|">
          <font>
             <Font name="Tahoma Bold" size="22.0" />

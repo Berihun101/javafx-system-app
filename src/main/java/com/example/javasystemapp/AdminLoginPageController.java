@@ -1,3 +1,4 @@
+package com.example.javasystemapp;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,7 +42,7 @@ public class AdminLoginPageController implements Initializable {
     }
     @FXML
     public void goBackToHome() throws IOException {
-        Main.sceneFactory("hello-view");
+        Main.sceneFactory("MainPage");
     }
     @FXML
     public void goToCreate() throws IOException {
@@ -55,7 +56,7 @@ public class AdminLoginPageController implements Initializable {
         boolean isValid = searchUser(adminUsername, password);
         Log.adminLoginAttempt(adminUsername, isValid);
         if (searchUser(adminUsername, password)) {
-            System.out.println("Logged in");
+            Main.sceneFactory("/com/example/javasystemapp/AdminDashboard");
         }
         else 
             lblErrorMessage.setText("Incorrect Username or Password!");
@@ -63,7 +64,7 @@ public class AdminLoginPageController implements Initializable {
     
     public boolean searchUser(String userKey, String passKey) throws ClassNotFoundException, SQLException  {
         boolean isValidUser = false;
-        String query = "SELECT * FROM ADMIN WHERE username=? AND password=?";
+        String query = "SELECT * FROM admin WHERE username=? AND password=?";
         Class.forName(DB_DRIVER);
         Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
         PreparedStatement preparedStatement = connection.prepareStatement(query);

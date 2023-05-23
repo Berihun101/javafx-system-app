@@ -1,0 +1,8 @@
+[2023-05-23 14:10:29]Admin User 'Berihun' attempted to log in with a wrong password.
+[2023-05-23 14:10:37]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:10:40]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:12:47]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:12:56]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:13:41]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:15:37]Admin User 'Berihun' logged in, successfully.
+[2023-05-23 14:17:18]Admin User 'Berihun' logged in, successfully.

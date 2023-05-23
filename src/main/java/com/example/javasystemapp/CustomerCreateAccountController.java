@@ -2,9 +2,7 @@ package com.example.javasystemapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -50,6 +48,9 @@ public class CustomerCreateAccountController {
 
     @FXML
     public TextField pass_tf;
+
+    @FXML
+    private Hyperlink backlink;
 
     @FXML
     public ImageView un_ic;

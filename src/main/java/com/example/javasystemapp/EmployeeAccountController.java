@@ -69,8 +69,8 @@ public class EmployeeAccountController {
                 preparedStatement.setString(3, adminName);
                 preparedStatement.executeUpdate();
                 connection.close();
-
-            
+                    lblErrorMessage.setText("");
+                   lblSuccessMessage.setText("You have successfully added the employee!");
         }
 
     }
