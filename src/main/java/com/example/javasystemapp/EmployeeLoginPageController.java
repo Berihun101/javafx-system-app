@@ -1,5 +1,8 @@
-package com.example.javasystemapp;
-
+import java.sql.*;
+import java.io.IOException;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
@@ -8,11 +11,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
 
 public class EmployeeLoginPageController implements Initializable {
     static String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -33,7 +31,7 @@ public class EmployeeLoginPageController implements Initializable {
     @FXML
     private TextField tfUsername, tfPassword1;
     
-    static String username;
+    static String employeeUsername;
     @FXML
     public void clear() {
         tfUsername.setText("");
@@ -46,13 +44,17 @@ public class EmployeeLoginPageController implements Initializable {
     public void goToCreate() throws IOException {
         System.out.println("Create");
     }
-
+    @FXML
+    public void goBackToHome() throws IOException {
+        Main.sceneFactory("hello-view");
+    }
     @FXML
     public void login() throws IOException, SQLException, ClassNotFoundException {
-        username = tfUsername.getText();
+        employeeUsername = tfUsername.getText();
+        Log.employeeLoginAttempt(employeeUsername);
         String password = tfPassword.getText();
-        if (searchUser(username, password)) {
-            Main.sceneFactory("/com/example/javasystemapp/employeeDashboard");
+        if (searchUser(employeeUsername, password)) {
+            System.out.println("Logged in");
         }
         else 
             lblErrorMessage.setText("Incorrect Username or Password!");
@@ -75,7 +77,6 @@ public class EmployeeLoginPageController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        username = tfUsername.getText();
         tfPassword1.setManaged(false);
         tfPassword1.setVisible(false);
         tfPassword1.textProperty().bindBidirectional(tfPassword.textProperty());  

@@ -1,17 +1,3 @@
-package com.example.javasystemapp;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
 import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
@@ -26,13 +12,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 
-
-public class CustomerLoginPageController {
+public class CustomerLoginPageController implements Initializable {
     static String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
     static String DB_URL = "jdbc:mysql://localhost/sims";
     static String DB_USER = "root";
     static String DB_PASS = "";
-
+    
     @FXML
     private Hyperlink goToCreate;
 
@@ -45,8 +30,8 @@ public class CustomerLoginPageController {
 
     @FXML
     private TextField tfUsername, tfPassword1;
-
-    static String username;
+    
+    static String customerUsername;
     @FXML
     public void clear() {
         tfUsername.setText("");
@@ -57,56 +42,60 @@ public class CustomerLoginPageController {
 
     @FXML
     public void goToCreate() throws IOException {
-        Main.sceneFactory("Customer-acc");
+        Main.sceneFactory("CreateAccount");
     }
 
     @FXML
     public void login() throws IOException, SQLException, ClassNotFoundException {
-        username = tfUsername.getText();
+        customerUsername = tfUsername.getText();
+        Log.CustomerLoginAttempt(customerUsername);
         String password = tfPassword.getText();
-        if (searchUser(username, password)) {
-            Main.sceneFactory("/com/example/javasystemapp/customerDashboard");
+        if (searchUser(customerUsername, password)) {
+            System.out.println("Logged in");
         }
-        else
+        else 
             lblErrorMessage.setText("Incorrect Username or Password!");
     }
-
+    @FXML
+    public void goBackToHome() throws IOException {
+        Main.sceneFactory("hello-view");
+    }
+    
     public boolean searchUser(String userKey, String passKey) throws SQLException, ClassNotFoundException {
         boolean isValidUser = false;
-        String query = "SELECT * FROM customer WHERE username=? AND password=?";
+        String query = "SELECT * FROM user WHERE username=? AND password=?";
         Class.forName(DB_DRIVER);
         Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, userKey);
         preparedStatement.setString(2, passKey);
         ResultSet resultSet = preparedStatement.executeQuery();
-        if (resultSet.next())
+        if (resultSet.next()) 
             isValidUser = true;
         return isValidUser;
     }
-
-
-
+    
+    
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        username = tfUsername.getText();
         tfPassword1.setManaged(false);
         tfPassword1.setVisible(false);
-        tfPassword1.textProperty().bindBidirectional(tfPassword.textProperty());
+        tfPassword1.textProperty().bindBidirectional(tfPassword.textProperty());  
         eyeIcon.setPickOnBounds(true);
         eyeIcon.setOnMouseClicked(event -> {
-            if (event.getButton().equals(MouseButton.PRIMARY)) {
-                if (tfPassword.isVisible()) {
-                    tfPassword.setManaged(false);
-                    tfPassword.setVisible(false);
-                    tfPassword1.setManaged(true);
-                    tfPassword1.setVisible(true);
-                } else {
-                    tfPassword1.setManaged(false);
-                    tfPassword1.setVisible(false);
-                    tfPassword.setManaged(true);
-                    tfPassword.setVisible(true);
+        if (event.getButton().equals(MouseButton.PRIMARY)) {
+            if (tfPassword.isVisible()) {
+                tfPassword.setManaged(false);
+                tfPassword.setVisible(false);
+                tfPassword1.setManaged(true);
+                tfPassword1.setVisible(true);
+            } else {
+                tfPassword1.setManaged(false);
+                tfPassword1.setVisible(false);
+                tfPassword.setManaged(true);
+                tfPassword.setVisible(true);
                 }
             }
         });
-    }
+    }        
 }
