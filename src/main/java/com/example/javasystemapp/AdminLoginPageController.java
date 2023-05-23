@@ -1,7 +1,7 @@
 
 import java.io.IOException;
 import java.net.URL;
-
+import java.sql.*;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +13,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 
 public class AdminLoginPageController implements Initializable {
-    
+    static String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+    static String DB_URL = "jdbc:mysql://localhost/sims";
+    static String DB_USER = "root";
+    static String DB_PASS = "";
     
     @FXML
     private Hyperlink goToCreate;
@@ -46,10 +49,11 @@ public class AdminLoginPageController implements Initializable {
     }
 
     @FXML
-    public void login() throws IOException {
+    public void login() throws IOException, ClassNotFoundException, SQLException {
         adminUsername = tfUsername.getText();
-        Log.adminLoginAttempt(adminUsername);
         String password = tfPassword.getText();
+        boolean isValid = searchUser(adminUsername, password);
+        Log.adminLoginAttempt(adminUsername, isValid);
         if (searchUser(adminUsername, password)) {
             System.out.println("Logged in");
         }
@@ -57,11 +61,17 @@ public class AdminLoginPageController implements Initializable {
             lblErrorMessage.setText("Incorrect Username or Password!");
     }
     
-    public boolean searchUser(String userKey, String passKey)  {
+    public boolean searchUser(String userKey, String passKey) throws ClassNotFoundException, SQLException  {
         boolean isValidUser = false;
-        if (passKey == "123")
-            if (userKey == "Mekdem" || userKey == "Fekadu" || userKey == "Berihun")
-                isValidUser = true;
+        String query = "SELECT * FROM ADMIN WHERE username=? AND password=?";
+        Class.forName(DB_DRIVER);
+        Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, userKey);
+        preparedStatement.setString(2, passKey);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) 
+            isValidUser = true;
         return isValidUser;
     }
     

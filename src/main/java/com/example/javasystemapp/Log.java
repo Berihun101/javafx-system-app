@@ -8,9 +8,13 @@ import java.time.format.DateTimeFormatter;
 
 public class Log {
     private static final String ADMIN_LOG_FILE_PATH= "admin_log.txt";
-    public static void adminLoginAttempt(String username) throws IOException {
+    public static void adminLoginAttempt(String username, boolean isValid) throws IOException {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        String adminLog = String.format("[%s]Admin User '%s' attempted to log in%n", timestamp, AdminLoginPageController.adminUsername);
+        String adminLog ="";
+        if (!isValid)
+            adminLog = String.format("[%s]Admin User '%s' attempted to log in with a wrong password.%n", timestamp, AdminLoginPageController.adminUsername);
+        else
+            adminLog = String.format("[%s]Admin User '%s' logged in, successfully.%n", timestamp, AdminLoginPageController.adminUsername);
         appendAdminLog(adminLog);
     }
 
@@ -24,9 +28,13 @@ public class Log {
     
     
     private static final String EMPLOYEE_LOG_FILE_PATH= "emloyee_log.txt";
-    public static void employeeLoginAttempt(String username) throws IOException {
+    public static void employeeLoginAttempt(String username, boolean isValid) throws IOException {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        String employeeLog = String.format("[%s]Employee User '%s' attempted to log in%n", timestamp, EmployeeLoginPageController.employeeUsername);
+        String employeeLog ="";
+        if (!isValid)
+            employeeLog = String.format("[%s]Employee User '%s' attempted to log in with a wrong password.%n", timestamp, EmployeeLoginPageController.employeeUsername);
+        else
+             employeeLog = String.format("[%s]Employee User '%s' logged in, successfully.%n", timestamp, EmployeeLoginPageController.employeeUsername);
         appendEmployeeLog(employeeLog);
     }
 
@@ -38,12 +46,14 @@ public class Log {
     
     
     
-    
-    
     private static final String CUSTOMER_LOG_FILE_PATH= "customer_log.txt";
-    public static void CustomerLoginAttempt(String username) throws IOException {
+    public static void CustomerLoginAttempt(String username, boolean isValid) throws IOException {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        String customerLog = String.format("[%s]Customer User '%s' attempted to log in%n", timestamp, CustomerLoginPageController.customerUsername);
+        String customerLog = "";
+        if(!isValid)
+            customerLog = String.format("[%s]Customer User '%s' attempted to log in with a wrong password.%n", timestamp, CustomerLoginPageController.customerUsername);
+        else
+            customerLog = String.format("[%s]Customer User '%s' logged in, successfully.%n", timestamp, CustomerLoginPageController.customerUsername);
         appendCustomerLog(customerLog);
     }
 

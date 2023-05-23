@@ -46,10 +46,11 @@ public class CustomerLoginPageController implements Initializable {
     }
 
     @FXML
-    public void login() throws IOException, SQLException, ClassNotFoundException {
+    public void login() throws IOException, ClassNotFoundException, SQLException {
         customerUsername = tfUsername.getText();
-        Log.CustomerLoginAttempt(customerUsername);
         String password = tfPassword.getText();
+        boolean isValid = searchUser(customerUsername, password);
+        Log.CustomerLoginAttempt(customerUsername, isValid);
         if (searchUser(customerUsername, password)) {
             System.out.println("Logged in");
         }
@@ -63,7 +64,7 @@ public class CustomerLoginPageController implements Initializable {
     
     public boolean searchUser(String userKey, String passKey) throws SQLException, ClassNotFoundException {
         boolean isValidUser = false;
-        String query = "SELECT * FROM user WHERE username=? AND password=?";
+        String query = "SELECT * FROM CUSTOMER WHERE username=? AND password=?";
         Class.forName(DB_DRIVER);
         Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
         PreparedStatement preparedStatement = connection.prepareStatement(query);
